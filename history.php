@@ -1,6 +1,6 @@
 <?php
 session_start();
-$user_val_str   = $_GET["val_str"]
+$user_val_str   = $_GET["val_str"];
 $server_val_str = $_SESSION["val_str"];
 
 
@@ -17,7 +17,7 @@ $mock_transactions = array(
 		"descripcion" => "Prueba API 2.2",
 		"fecha"       => date("d/m/Y H:i:s")
 	)
-)
+);
 
-echo json_encode($mock_transactions, JSON_UNESCAPED_UNICODE)
+echo json_encode($mock_transactions, JSON_UNESCAPED_UNICODE);
 ?>
