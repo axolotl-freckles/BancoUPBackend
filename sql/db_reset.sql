@@ -19,6 +19,7 @@ CREATE TABLE BancoUP.transactions (
 	date           datetime     NOT NULL,
 	type           varchar(128) NOT NULL
 ) ENGINE = InnoDB;
+
 -- ALTER TABLE BancoUP.transactions
 -- 	ADD CONSTRAINT `fk_updb_trans_sender`
 -- 		FOREIGN KEY (id_sender) REFERENCES BancoUP.users(id_user)
