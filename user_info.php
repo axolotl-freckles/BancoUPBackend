@@ -1,7 +1,10 @@
 <?php
 session_start();
-$user_val_str   = $_GET["val_str"];
-$server_val_str = $_SESSION["val_str"];
+header('Access-Control-Allow-Origin: *');
+if (empty($_GET["val_str"])) {
+	echo("ERROR: No validation info!");
+	exit(400);
+}
 
 $user_info = array(
 	"balance" => 500.0,

@@ -1,15 +1,23 @@
 <?php
-$username  = $_GET["username"];
-$pass_hash = password_hash($_GET["password"], PASSWORD_BCRYPT);
-$remote_addr = $_SERVER["REMOTE_ADDR"];
+header('Access-Control-Allow-Origin: *');
 
-if (empty($username)) {
+if (empty($_POST["username"])) {
 	echo("ERROR: no username provided!");
-	exit(400)
+	exit(400);
+}
+if (empty($_POST["password"])) {
+	echo("ERROR: no password providede!");
+	exit(400);
 }
 
-session_start();
-$_SESSION["val_str"] = $username."@".$remote_addr;
+$username    = $_POST["username"];
+$pass_hash   = password_hash($_POST["password"], PASSWORD_BCRYPT);
+$remote_addr = $_SERVER["REMOTE_ADDR"];
 
-echo "Usuario: ".$username." Direccion: ".$remote_addr;
+$user_info = array(
+	"val_str" => $pass_hash,
+	"id_user" => 5
+);
+
+echo json_encode($user_info, JSON_UNESCAPED_UNICODE);
 ?>
