@@ -1,14 +1,14 @@
 <?php
-$hostname = "localhost:";
-$dbname   = "bancoUP_db";
-$username = "remote_user";
-$spscpass = "1needHlpPLz";
+$hostname = "127.0.0.1:3306";
+$dbname   = "BancoUP";
+$username = "remoteUser";
+$spscpass = "1needHlpPlz";
 
-$mysqli = new mysqli(
-		hostname: $hostname,
-		username: $username,
-		password: $spscpass,
-		database: $dbname
+$mysqli = mysqli_connect(
+		$hostname,
+		$username,
+		$spscpass,
+		$dbname
 );
 
 if ($mysqli->connect_errno) {
